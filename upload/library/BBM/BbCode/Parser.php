@@ -130,9 +130,14 @@ class BBM_BbCode_Parser extends XFCP_BBM_BbCode_Parser
                 $notFound = true;
                 for ($i = $topOfStack; $i >= 0; $i--)
                 {
-                    if (isset($tagInfo['allowedParents'][ $this->_tagStack[$i]['tag'] ]))
+                    $_tagName = $this->_tagStack[$i]['tag'];
+                    if (isset($tagInfo['allowedParents'][$_tagName]))
                     {
-                        $notFound = false;
+                        // Only consider it the tag a valid parent if it is below the distance threshold between the child tag and the parent tag.
+                        // This is critical to ensure the scope for attempting to render bad bbcode is reduced
+                        // and allows the user to see what was entered wrong.
+                        if (($topOfStack - $i) < $tagInfo['allowedParents'][$_tagName])
+                            $notFound = false;
                         break;
                     }
                 }
