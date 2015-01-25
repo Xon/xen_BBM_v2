@@ -77,6 +77,13 @@ class BBM_BbCode_Formatter_Base extends XFCP_BBM_BbCode_Formatter_Base
 			}
 
 			$tagName = $bbm['tag'];
+            if(isset($bbm['children']) && is_array($bbm['children']))
+            {
+                foreach($bbmTags AS $bbm)
+                {
+                    $allBbmTags[$bbm['children']] = $bbm['children'];
+                }
+            }
 
       			if($bbm['start_range'])
       			{

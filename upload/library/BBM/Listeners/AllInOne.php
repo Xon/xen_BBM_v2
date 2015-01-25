@@ -80,7 +80,7 @@ class BBM_Listeners_AllInOne
 	 **/
 	public static function modifyParser($class, array &$extend)
 	{
-		if ($class == 'XenForo_BbCode_Parser' && XenForo_Application::get('options')->get('Bbm_modify_parser'))
+		if ($class == 'XenForo_BbCode_Parser' )
 		{
 			$extend[] = 'BBM_BbCode_Parser';
 		}
