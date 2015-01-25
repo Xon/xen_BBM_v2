@@ -611,7 +611,7 @@ class BBM_BbCode_Formatter_Base extends XFCP_BBM_BbCode_Formatter_Base
 				new $template_callback_class($this);
 			}
 			
-			call_user_func_array(array($template_callback_class, $template_callback_method), array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this));
+			call_user_func_array(array($template_callback_class, $template_callback_method), array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this, $tag));
 		}
 
 		if( !empty($tagInfo['bbcode_id']) )
