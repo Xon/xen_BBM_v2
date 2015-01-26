@@ -381,6 +381,7 @@ class BBM_ControllerAdmin_BbCodes extends XenForo_ControllerAdmin_Abstract
 				'emptyContent_check' => XenForo_Input::UINT,
 				'allow_signature' => XenForo_Input::UINT,
 				'preParser' => XenForo_Input::UINT,
+                'stopPreRender' => XenForo_Input::UINT,
 				'options_separator' => XenForo_Input::STRING,
 
 				'parser_has_usr' => XenForo_Input::UINT,
@@ -749,6 +750,7 @@ class BBM_ControllerAdmin_BbCodes extends XenForo_ControllerAdmin_Abstract
 				'emptyContent_check' => (int) $BbCode->ParserOptions->emptyContent_check,
 				'allow_signature' => (int) $BbCode->ParserOptions->allow_signature,
 				'preParser' => (int) $BbCode->ParserOptions->preParser,
+                'stopPreRender' => (int) $BbCode->ParserOptions->stopPreRender,
 				'options_separator' => (string) $BbCode->ParserOptions->options_separator,
 
 				'parser_has_usr' => (int) $BbCode->ParserPerms->parser_has_usr,

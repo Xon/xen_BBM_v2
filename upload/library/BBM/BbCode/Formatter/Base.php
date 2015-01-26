@@ -243,6 +243,11 @@ class BBM_BbCode_Formatter_Base extends XFCP_BBM_BbCode_Formatter_Base
       				$this->addPreParserBbCode($tagName);
       			}
 
+      			if(!empty($bbm['stopPreRender']))
+      			{
+      				$allBbmTags[$tagName]['stopPreRender'] = true;
+      			}
+                
 			$allBbmTags[$tagName]['allowSignature'] = $bbm['allow_signature'];
 
       			$allBbmTags[$tagName]['options_separator'] = $bbm['options_separator'];
@@ -576,7 +581,14 @@ class BBM_BbCode_Formatter_Base extends XFCP_BBM_BbCode_Formatter_Base
 			return $viewPermissionsReturn;
 		}
 
-		$content = $this->renderSubTree($tag['children'], $rendererStates);
+        if (!empty($tagInfo['stopPreRender']))
+        {
+            $content = '';
+        }
+        else
+        {
+            $content = $this->renderSubTree($tag['children'], $rendererStates);
+        }
 		
 		$options = array();
 		$templateName = $tagInfo['template_name'];

@@ -66,6 +66,7 @@ class BBM_DataWriter_BbCodes extends XenForo_DataWriter
 				'emptyContent_check' => array('type' => self::TYPE_UINT, 'default' => 1),
 				'allow_signature' => array('type' => self::TYPE_UINT, 'default' => 0),
 				'preParser' => array('type' => self::TYPE_UINT, 'default' => 0),
+                'stopPreRender' => array('type' => self::TYPE_UINT, 'default' => 0),
 				'options_separator' => array('type' => self::TYPE_STRING, 'default' => '', 'maxLength' => 5),				
 
 				'parser_has_usr' => array('type' => self::TYPE_UINT, 'default' => 0),

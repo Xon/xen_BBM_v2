@@ -225,7 +225,10 @@
 				<xen:option name="preParser" selected="{$code.preParser}">{xen:phrase bbm_bbcode_opt_preparser}</xen:option>
 				<xen:explain>{xen:phrase bbm_bbcode_opt_preparser_desc}</xen:explain>
 			</xen:checkboxunit>
-
+			<xen:checkboxunit label="">
+				<xen:option name="stopPreRender" selected="{$code.stopPreRender}">{xen:phrase bbm_bbcode_opt_stopprerender}</xen:option>
+				<xen:explain>{xen:phrase bbm_bbcode_opt_stopprerender_desc}</xen:explain>
+			</xen:checkboxunit>
 			<fieldset style="margin:0">
 				<xen:selectunit name="wrapping_tag" value="{$code.wrapping_tag}" label="{xen:phrase bbm_wrapping_tag}:">	
 					<xen:option value="none" label="{xen:phrase bbm_none}" />
@@ -770,7 +773,10 @@
 			<xen:option name="preParser" selected="{$code.preParser}">{xen:phrase bbm_bbcode_opt_preparser}</xen:option>
 			<xen:explain>{xen:phrase bbm_bbcode_opt_preparser_desc}</xen:explain>
 		</xen:checkboxunit>
-
+        <xen:checkboxunit label="">
+            <xen:option name="stopPreRender" selected="{$code.stopPreRender}">{xen:phrase bbm_bbcode_opt_stopprerender}</xen:option>
+            <xen:explain>{xen:phrase bbm_bbcode_opt_stopprerender_desc}</xen:explain>
+        </xen:checkboxunit>
       		<xen:selectunit name="wrapping_tag" value="{$code.wrapping_tag}" label="{xen:phrase bbm_wrapping_tag}:">	
       			<xen:option value="none" label="{xen:phrase bbm_none}" />
       			<xen:foreach loop="$activeTags" value="$activeTag">
@@ -2973,6 +2979,8 @@ fake={xen:phrase bbm_xenTags_unparsed_fake}</edit_format_params>
     <phrase title="bbm_bbCode_option" version_id="0" version_string="1.0"><![CDATA[Requires Option]]></phrase>
     <phrase title="bbm_bbcode_opt_preparser" version_id="51" version_string="2.8.0"><![CDATA[Enable the Bbm pre-parser function]]></phrase>
     <phrase title="bbm_bbcode_opt_preparser_desc" version_id="51" version_string="2.8.0"><![CDATA[The pre-parser function is meant to be used by developers who would want to make a database request one time for all Bb Codes. This function will only work if it has been enabled in the Bbm Bb Codes Manager Options.]]></phrase>
+    <phrase title="bbm_bbcode_opt_stopprerender" version_id="51" version_string="2.8.0"><![CDATA[Stops pre-rendering of content before invoking the template callback.]]></phrase>
+    <phrase title="bbm_bbcode_opt_stopprerender_desc" version_id="51" version_string="2.8.0"><![CDATA[Delegates output to the template callback instead of BBM core.]]></phrase>        
     <phrase title="bbm_bbcode_protected_cant_view_bbcode" version_id="0" version_string="1.0"><![CDATA[Subscribe and get exclusive access to our premium content!]]></phrase>
     <phrase title="bbm_bbcode_protected_content_title" version_id="0" version_string="1.0"><![CDATA[Premium Content]]></phrase>
     <phrase title="bbm_bbcode_spoiler_close" version_id="0" version_string="1.0"><![CDATA[ (close)]]></phrase>

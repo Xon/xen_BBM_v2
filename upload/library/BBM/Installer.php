@@ -35,6 +35,7 @@ class BBM_Installer
 			'emptyContent_check'	=> "INT(1) NOT NULL DEFAULT '1'",
 			'allow_signature'	=> "INT(1) NOT NULL DEFAULT '0'",
 			'preParser'		=> "INT(1) NOT NULL DEFAULT '0'",
+            'stopPreRender'		=> "INT(1) NOT NULL DEFAULT '0'",
 			'parser_has_usr'	=> "INT(1) NOT NULL DEFAULT '0'",
 			'parser_usr'		=> "TEXT DEFAULT NULL",
 			'parser_return'		=> "varchar(25) NOT NULL DEFAULT 'blank'",
@@ -237,6 +238,11 @@ class BBM_Installer
 			self::addColumnIfNotExist($db, 'bbm', 'redactor_button_type_opt', "varchar(155) DEFAULT NULL");
 		}
 
+		if(empty($addon) || $addon['version_id'] < 64)
+		{
+			self::addColumnIfNotExist($db, 'bbm', 'stopPreRender', "INT(1) NOT NULL DEFAULT '0'");
+		}
+        
 		//Generate simple cache (users don't need anymore to edit a bbcode and save it (without operating any change) to activate the Simple Cache
 		XenForo_Model::create('BBM_Model_BbCodes')->simplecachedActiveBbCodes();
 	}

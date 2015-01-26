@@ -433,6 +433,7 @@ class BBM_Model_BbCodes extends XenForo_Model
 				$ParserOptionsNode->appendChild($document->createElement('emptyContent_check', $bbcode['emptyContent_check']));
 				$ParserOptionsNode->appendChild($document->createElement('allow_signature', $bbcode['allow_signature']));
 				$ParserOptionsNode->appendChild($document->createElement('preParser', $bbcode['preParser']));			
+				$ParserOptionsNode->appendChild($document->createElement('stopPreRender', $bbcode['stopPreRender']));
 				$ParserOptionsNode->appendChild($document->createElement('options_separator', $bbcode['options_separator']));
 				
 			$ParserPerms = $bbcodeNode->appendChild($document->createElement('ParserPerms'));
@@ -556,7 +557,7 @@ class BBM_Model_BbCodes extends XenForo_Model
 						'hasButton', 'button_has_usr', 'button_usr', 'killCmd', 'custCmd', 'imgMethod', 'buttonDesc', 'tagOptions', 'tagContent',
 						'quattro_button_type', 'quattro_button_type_opt', 'quattro_button_return', 'quattro_button_return_opt',
 						'redactor_has_icon', 'redactor_sprite_mode', 'redactor_image_url', 'redactor_sprite_params_x', 'redactor_sprite_params_y',
-						'redactor_button_type', 'redactor_button_type_opt'
+						'redactor_button_type', 'redactor_button_type_opt', 'stopPreRender'
 					);
 
 			foreach($keysToCheck as $k)
@@ -610,6 +611,7 @@ class BBM_Model_BbCodes extends XenForo_Model
 				$ParserOptionsNode->appendChild($document->createElement('emptyContent_check', $bbcode['emptyContent_check']));
 				$ParserOptionsNode->appendChild($document->createElement('allow_signature', $bbcode['allow_signature']));
 				$ParserOptionsNode->appendChild($document->createElement('preParser', $bbcode['preParser']));
+				$ParserOptionsNode->appendChild($document->createElement('stopPreRender', $bbcode['stopPreRender']));
 				
 			$ParserPerms = $bbcodeNode->appendChild($document->createElement('ParserPerms'));
 				$ParserPerms->appendChild($document->createElement('parser_has_usr', $bbcode['parser_has_usr']));
