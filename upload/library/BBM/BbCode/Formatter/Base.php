@@ -611,13 +611,13 @@ class BBM_BbCode_Formatter_Base extends XFCP_BBM_BbCode_Formatter_Base
 				new $template_callback_class($this);
 			}
 			
-			call_user_func_array(array($template_callback_class, $template_callback_method), array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this, $tag));
+			call_user_func_array(array($template_callback_class, $template_callback_method), array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this, null, $tag));
 		}
 
 		if( !empty($tagInfo['bbcode_id']) )
 		{
 			$uniqueID = $tagInfo['bbcode_id'];
-			XenForo_CodeEvent::fire('bbm_callback_template_pre', array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this, $uniqueID), $uniqueID);
+			XenForo_CodeEvent::fire('bbm_callback_template_pre', array(&$content, &$options, &$templateName, &$fallBack, $rendererStates, $this, $uniqueID, $tag), $uniqueID);
 		}
 
 		if($fallBack === true)
