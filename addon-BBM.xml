@@ -4100,10 +4100,10 @@ span.mce_bbm_spoiler {
 				<xen:if is="{$button.isSprite} AND {$button.url} == {xen:phrase bbm_buttons_xensprites_url}">
 					background-position: {$button.pos.x}px {$button.pos.y}px;
 				<xen:elseif is="{$button.isSprite}" />
-					background-image: url("@imagePath/{$button.url}");
+					background-image: url("@imagePath{$button.url}");
 					background-position: {$button.pos.x}px {$button.pos.y}px;
 				<xen:else />
-					background: url("@imagePath/{$button.url}") no-repeat 0 0;
+					background: url("@imagePath{$button.url}") no-repeat 0 0;
 				</xen:if>
 			}
 		</xen:foreach>
