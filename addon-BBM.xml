@@ -4090,7 +4090,7 @@ span.mce_bbm_spoiler {
 <p>{xen:phrase bbm_controller_action} <b>{$controllerAction}</b></p>
 <p>{xen:phrase bbm_view_name} <b>{$viewName}</b></p>]]></template>
     <template title="bbm_editor_js_setup" version_id="49" version_string="2.7.0"><![CDATA[<xen:require js="js/bbm/redactor/bbm_5_redactor.js" />]]></template>
-    <template title="bbm_editor_redactor_autocss" version_id="55" version_string="3.0.0"><![CDATA[<xen:require css="bbm_editor_redactor_autocss.css" />
+    <template title="bbm_editor_redactor_autocss" version_id="87" version_string="3.3.4"><![CDATA[<xen:require css="bbm_editor_redactor_autocss.css" />
 
 <xen:if is="{$bbmCustomCss}">
 	<style type="text/css">
@@ -4100,10 +4100,10 @@ span.mce_bbm_spoiler {
 				<xen:if is="{$button.isSprite} AND {$button.url} == {xen:phrase bbm_buttons_xensprites_url}">
 					background-position: {$button.pos.x}px {$button.pos.y}px;
 				<xen:elseif is="{$button.isSprite}" />
-					background-image: url("@imagePath{$button.url}");
+					background-image: url("{xen:property imagePath}/{$button.url}");
 					background-position: {$button.pos.x}px {$button.pos.y}px;
 				<xen:else />
-					background: url("@imagePath{$button.url}") no-repeat 0 0;
+					background: url("{xen:property imagePath}/{$button.url}") no-repeat 0 0;
 				</xen:if>
 			}
 		</xen:foreach>
